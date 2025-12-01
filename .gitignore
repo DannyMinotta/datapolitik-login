@@ -1,0 +1,8 @@
+# Carpetas de compilación de NetBeans
+/nbproject/private/
+/build/
+/dist/
+
+# Archivos temporales
+*.log
+*.tmp
