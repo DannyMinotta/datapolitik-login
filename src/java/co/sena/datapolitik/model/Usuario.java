@@ -1,62 +1,80 @@
 package co.sena.datapolitik.model;
 
-/**
- * Representa a un usuario de la aplicación DataPolitik.
- * Para esta evidencia solo se usarán algunos atributos básicos.
- */
 public class Usuario {
 
-    private String documento;
-    private String nombreCompleto;
-    private String rol;
+    private int idUsuario;
+    private String correoElectronico;
+    private String contrasenaHash;
+    private String nombres;
+    private String apellidos;
+    private String tipoDocumento;
+    private String numeroDocumento;
+    private String telefono;
 
     public Usuario() {
-        // Constructor vacío requerido por JavaBeans
     }
 
-    /**
-     * Constructor principal para inicializar un usuario.
-     *
-     * @param documento      Número de documento del usuario
-     * @param nombreCompleto Nombre completo del usuario
-     * @param rol            Rol del usuario dentro de la aplicación (ej. ADMIN, ANALISTA)
-     */
-    public Usuario(String documento, String nombreCompleto, String rol) {
-        this.documento = documento;
-        this.nombreCompleto = nombreCompleto;
-        this.rol = rol;
+    public int getIdUsuario() {
+        return idUsuario;
     }
 
-    public String getDocumento() {
-        return documento;
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
-    public void setDocumento(String documento) {
-        this.documento = documento;
+    public String getCorreoElectronico() {
+        return correoElectronico;
     }
 
-    public String getNombreCompleto() {
-        return nombreCompleto;
+    public void setCorreoElectronico(String correoElectronico) {
+        this.correoElectronico = correoElectronico;
     }
 
-    public void setNombreCompleto(String nombreCompleto) {
-        this.nombreCompleto = nombreCompleto;
+    public String getContrasenaHash() {
+        return contrasenaHash;
     }
 
-    public String getRol() {
-        return rol;
+    public void setContrasenaHash(String contrasenaHash) {
+        this.contrasenaHash = contrasenaHash;
     }
 
-    public void setRol(String rol) {
-        this.rol = rol;
+    public String getNombres() {
+        return nombres;
     }
 
-    @Override
-    public String toString() {
-        return "Usuario{" +
-                "documento='" + documento + '\'' +
-                ", nombreCompleto='" + nombreCompleto + '\'' +
-                ", rol='" + rol + '\'' +
-                '}';
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public String getTipoDocumento() {
+        return tipoDocumento;
+    }
+
+    public void setTipoDocumento(String tipoDocumento) {
+        this.tipoDocumento = tipoDocumento;
+    }
+
+    public String getNumeroDocumento() {
+        return numeroDocumento;
+    }
+
+    public void setNumeroDocumento(String numeroDocumento) {
+        this.numeroDocumento = numeroDocumento;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 }

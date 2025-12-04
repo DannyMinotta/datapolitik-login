@@ -1,29 +1,33 @@
 package co.sena.datapolitik.service.impl;
 
+import co.sena.datapolitik.dao.UsuarioDAO;
+import co.sena.datapolitik.dao.impl.UsuarioDAOImpl;
 import co.sena.datapolitik.model.Usuario;
 import co.sena.datapolitik.service.AuthService;
 
-/**
- * Implementación sencilla del servicio de autenticación.
- * En esta evidencia se utiliza un usuario "quemado" en el código
- * únicamente con fines académicos.
- */
 public class AuthServiceImpl implements AuthService {
 
+    private final UsuarioDAO usuarioDAO;
+
+    public AuthServiceImpl() {
+        this.usuarioDAO = new UsuarioDAOImpl();
+    }
+
     @Override
-    public Usuario autenticar(String documento, String password) {
-        // NOTA: En un escenario real, aquí se consultaría una base de datos.
-        // Para efectos de la evidencia, se valida contra un usuario estático.
+    public Usuario login(String numeroDocumento, String password) throws Exception {
+        Usuario usuario = usuarioDAO.buscarPorNumeroDocumento(numeroDocumento);
 
-        String documentoValido = "123456789";
-        String passwordValida = "admin123";
-
-        if (documentoValido.equals(documento) && passwordValida.equals(password)) {
-            // Si las credenciales coinciden, se construye y retorna el usuario autenticado
-            return new Usuario(documentoValido, "Usuario Administrador", "ADMIN");
+        if (usuario == null) {
+            return null;
         }
 
-        // Cuando no coincide, se retorna null para indicar fallo en la autenticación
+        // Aquí comparamos la contraseña "en claro" con el campo contrasena_hash.
+        // En un sistema real se debería almacenar un hash seguro.
+        if (usuario.getContrasenaHash() != null
+                && usuario.getContrasenaHash().equals(password)) {
+            return usuario;
+        }
+
         return null;
     }
 }

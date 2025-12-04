@@ -2,18 +2,11 @@ package co.sena.datapolitik.service;
 
 import co.sena.datapolitik.model.Usuario;
 
-/**
- * Define las operaciones relacionadas con la autenticación de usuarios.
- */
 public interface AuthService {
 
     /**
-     * Intenta autenticar un usuario con el documento y contraseña indicados.
-     *
-     * @param documento Número de documento ingresado en el formulario.
-     * @param password  Contraseña ingresada en el formulario.
-     * @return Un objeto Usuario cuando las credenciales son válidas;
-     *         null en caso contrario.
+     * Autentica al usuario a partir de su número de documento y contraseña.
+     * @return el Usuario autenticado o null si las credenciales no son válidas.
      */
-    Usuario autenticar(String documento, String password);
+    Usuario login(String numeroDocumento, String password) throws Exception;
 }

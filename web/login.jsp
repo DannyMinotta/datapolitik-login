@@ -121,27 +121,35 @@
             <% } %>
 
             <!-- Formulario de inicio de sesión -->
-            <form action="login" method="post">
-                <label for="documento">Número de documento</label>
-                <input type="text"
-                       id="documento"
-                       name="documento"
-                       value="<%= documentoIngresado %>"
-                       autocomplete="off" />
+<form action="login" method="post">
+    <!-- Número de documento -->
+    <input type="text" name="numeroDocumento" placeholder="Número de documento" required>
 
-                <label for="password">Contraseña</label>
-                <input type="password"
-                       id="password"
-                       name="password"
-                       autocomplete="off" />
+    <!-- Contraseña -->
+    <input type="password" name="password" placeholder="Contraseña" required>
 
-                <input type="submit" value="Ingresar" />
-            </form>
+    <!-- Botón -->
+    <button type="submit">Ingresar</button>
 
-            <div class="links">
-                <a href="recuperar.jsp">¿Olvidó su contraseña?</a>
-                <a href="registro.jsp">Registrarse</a>
-            </div>
+    <!-- Mensaje de error (opcional) -->
+    <%
+        String error = (String) request.getAttribute("error");
+        if (error != null) {
+    %>
+        <div style="color: #ff8080; margin-top: 10px;">
+            <%= error %>
+        </div>
+    <%
+        }
+    %>
+</form>
+
+
+<div class="links">
+    <a href="recuperar.jsp">¿Olvidó su contraseña?</a>
+    <a href="<%= request.getContextPath() %>/usuarios?accion=nuevo">Registrarse</a>
+</div>
+
         </div>
     </body>
 </html>

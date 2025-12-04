@@ -1,0 +1,14 @@
+Nombre del proyecto: DataPolitikLogin (Módulo de Login)
+
+Descripción:
+Módulo de autenticación (inicio de sesión) de la aplicación web DataPolitik (MVP),
+implementado con Java, Jakarta Servlets, JSP y patrón MVC sencillo sobre Apache Tomcat 10.
+Incluye validaciones básicas de campos, manejo de sesiones y redirección al dashboard.
+
+Enlace al repositorio remoto (GitHub):
+https://github.com/DannyMinotta/datapolitik-login
+
+Aprendiz:
+Danny Alexander Minota Soto
+Ficha: [escribe aquí la ficha]
+Evidencia: GA7-220501096-AA3-EV01 - Codificación de módulos del software
